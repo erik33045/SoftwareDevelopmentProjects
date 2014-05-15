@@ -1,4 +1,4 @@
-﻿namespace SoftwareDevelopmentProjects
+﻿namespace Program1
 {
     class Program
     {
