@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -53,10 +52,10 @@ namespace Stocks
             return stockData;
         }
 
-        public static List<StockData> GetStockData(string symbol, DateTime startDate, DateTime endDate)
+        public static List<StockData> GetStockData(string symbol, DateTime startDate, DateTime endDate, BarScope scope)
         {
             const string baseUrl = "http://ichart.finance.yahoo.com/table.csv?";
-            var queryText = BuildHistoricalDataRequest(symbol, startDate, DateTime.Today);
+            var queryText = BuildHistoricalDataRequest(symbol, startDate, DateTime.Today, scope);
             var url = string.Format("{0}{1}", baseUrl, queryText);
 
 
@@ -70,7 +69,7 @@ namespace Stocks
             return GetStockDataFromStream(stream).OrderBy( x => x.Date).ToList();            
         }
 
-        static string BuildHistoricalDataRequest(string symbol, DateTime startDate, DateTime endDate)
+        static string BuildHistoricalDataRequest(string symbol, DateTime startDate, DateTime endDate, BarScope scope)
         {
             var request = new StringBuilder();
             request.AppendFormat("s={0}", symbol);
@@ -80,9 +79,18 @@ namespace Stocks
             request.AppendFormat("&d={0}", endDate.Month - 1);
             request.AppendFormat("&e={0}", endDate.Day);
             request.AppendFormat("&f={0}", endDate.Year);
-            request.AppendFormat("&g={0}", "d"); //daily
+            request.AppendFormat("&g={0}", scope); //daily
 
             return request.ToString();
         }
+    }
+
+    public enum BarScope
+    {
+        // ReSharper disable InconsistentNaming
+        d = 1,
+        w = 2,
+        m = 3
+        // ReSharper restore InconsistentNaming
     }
 }

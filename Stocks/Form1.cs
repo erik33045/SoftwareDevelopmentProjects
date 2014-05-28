@@ -12,7 +12,8 @@ namespace Stocks
         {
             InitializeComponent();
             Date_Start.MaxDate = DateTime.Now.AddDays(-2);
-            Date_End.MaxDate = DateTime.Now.AddDays(-1);            
+            Date_End.MaxDate = DateTime.Now.AddDays(-1);
+            Radio_Daily.Checked = true;
         }
 
         /// <summary>
@@ -55,13 +56,23 @@ namespace Stocks
         {
             try
             {
+                BarScope scope;
+                if (Radio_Daily.Checked)
+                    scope = BarScope.d;
+                else if (Radio_Weekly.Checked)
+                    scope = BarScope.w;
+                else
+                    scope = BarScope.m;
+
+
+
                 if (string.IsNullOrEmpty(Text_Symbol.Text))
                 {
                     MessageBox.Show("Please Enter A Symbol", "An Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                var stocks = StockData.GetStockData(Text_Symbol.Text.ToUpper(), Date_Start.Value, Date_End.Value);
+                var stocks = StockData.GetStockData(Text_Symbol.Text.ToUpper(), Date_Start.Value, Date_End.Value, scope);
 
                 chart1.Series.Clear();
                 var stockData = GetStockDataSeries(stocks);
