@@ -42,6 +42,10 @@
             this.Radio_Monthly = new System.Windows.Forms.RadioButton();
             this.Radio_Weekly = new System.Windows.Forms.RadioButton();
             this.Radio_Daily = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Text_Max = new System.Windows.Forms.TextBox();
+            this.Text_Min = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -54,14 +58,13 @@
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(427, 322);
+            this.chart1.Size = new System.Drawing.Size(559, 322);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // Date_Start
             // 
-            this.Date_Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Date_Start.Location = new System.Drawing.Point(239, 18);
+            this.Date_Start.Location = new System.Drawing.Point(242, 18);
             this.Date_Start.MaxDate = new System.DateTime(2014, 5, 27, 0, 0, 0, 0);
             this.Date_Start.Name = "Date_Start";
             this.Date_Start.Size = new System.Drawing.Size(200, 20);
@@ -70,9 +73,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 2);
+            this.label1.Location = new System.Drawing.Point(239, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 2;
@@ -87,22 +89,20 @@
             this.panel1.Controls.Add(this.chart1);
             this.panel1.Location = new System.Drawing.Point(12, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 322);
+            this.panel1.Size = new System.Drawing.Size(559, 322);
             this.panel1.TabIndex = 3;
             // 
             // Date_End
             // 
-            this.Date_End.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Date_End.Location = new System.Drawing.Point(239, 68);
+            this.Date_End.Location = new System.Drawing.Point(242, 68);
             this.Date_End.Name = "Date_End";
             this.Date_End.Size = new System.Drawing.Size(200, 20);
             this.Date_End.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(236, 52);
+            this.label2.Location = new System.Drawing.Point(239, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 5;
@@ -130,7 +130,7 @@
             this.Button_Chart.Name = "Button_Chart";
             this.Button_Chart.Size = new System.Drawing.Size(105, 36);
             this.Button_Chart.TabIndex = 8;
-            this.Button_Chart.Text = "Chart";
+            this.Button_Chart.Text = "GO!";
             this.Button_Chart.UseVisualStyleBackColor = true;
             this.Button_Chart.Click += new System.EventHandler(this.Button_Chart_Click);
             // 
@@ -179,11 +179,51 @@
             this.Radio_Daily.Text = "Daily";
             this.Radio_Daily.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(462, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Min Low";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(462, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Max High";
+            // 
+            // Text_Max
+            // 
+            this.Text_Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Text_Max.Location = new System.Drawing.Point(465, 68);
+            this.Text_Max.Name = "Text_Max";
+            this.Text_Max.Size = new System.Drawing.Size(100, 20);
+            this.Text_Max.TabIndex = 12;
+            // 
+            // Text_Min
+            // 
+            this.Text_Min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Text_Min.Location = new System.Drawing.Point(465, 18);
+            this.Text_Min.Name = "Text_Min";
+            this.Text_Min.Size = new System.Drawing.Size(100, 20);
+            this.Text_Min.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 428);
+            this.ClientSize = new System.Drawing.Size(583, 428);
+            this.Controls.Add(this.Text_Min);
+            this.Controls.Add(this.Text_Max);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Button_Chart);
             this.Controls.Add(this.label3);
@@ -193,7 +233,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Date_Start);
-            this.MinimumSize = new System.Drawing.Size(467, 467);
+            this.MinimumSize = new System.Drawing.Size(599, 467);
             this.Name = "Form1";
             this.Text = "Stock";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -220,6 +260,10 @@
         private System.Windows.Forms.RadioButton Radio_Monthly;
         private System.Windows.Forms.RadioButton Radio_Weekly;
         private System.Windows.Forms.RadioButton Radio_Daily;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Text_Max;
+        private System.Windows.Forms.TextBox Text_Min;
 
     }
 }
